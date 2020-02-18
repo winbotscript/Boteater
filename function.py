@@ -372,7 +372,7 @@ class Boteater:
         return json.loads(requests.get(self.lineServer+"/mh/api/v1/userpopup/getDetail.json?userMid="+mid, headers=self.tl_headers).text)
 
     def getProfileCoverURL(self, mid):
-        home = self.get_timeline_user(mid)
+        home = self.getProfileDetail(mid)
         return self.lineOBS+'/myhome/c/download.nhn?userid='+mid+'&oid='+home['result']['objectId']
 
     def getTimelineURL(self, mid):
